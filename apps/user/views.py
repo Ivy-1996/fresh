@@ -1,13 +1,14 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.views import View
 from django.conf import settings
-from apps.user.models import User
+from apps.user.models import User, Address
 from django.contrib.auth import authenticate, login, logout
 import re
 from itsdangerous import JSONWebSignatureSerializer as Serializer
 from itsdangerous import BadSignature
 import time
 from celery_tasks.task import send_register_mail
+from utils.mixin import LoginRequredMixIn
 
 
 # Create your views here.
@@ -75,7 +76,9 @@ class LoginView(View):
 
         login(request, user)
 
-        response = redirect(reverse('goods:index'))
+        next_url = request.GET.get('next', reverse('goods:index'))
+
+        response = redirect(next_url)
 
         remember = request.POST.get('remember')
 
@@ -85,6 +88,12 @@ class LoginView(View):
             response.delete_cookie('username')
 
         return response
+
+
+class LogoutView(View):
+    def get(self, request):
+        logout(request)
+        return redirect(reverse('user:login'))
 
 
 class ActiveView(View):
@@ -99,3 +108,54 @@ class ActiveView(View):
             return redirect(reverse('user:login'))
         except BadSignature:
             return HttpResponse('错误的请求链接!', status=401)
+
+
+class UserInfoView(LoginRequredMixIn):
+    def get(self, request):
+        # 获取个人信息
+        address = Address.objects.get_default_address(request.user)
+        # 获取浏览记录
+        return render(request, 'user_center_info.html', {'page': 'user', 'address': address})
+
+
+class UserOrderView(LoginRequredMixIn):
+    def get(self, request):
+        # 获取用户的订单信息
+        return render(request, 'user_center_order.html', {'page': 'order'})
+
+
+class AddressView(LoginRequredMixIn):
+    def get(self, request):
+        # 获取用户的默认收货地址
+
+        address = Address.objects.get_default_address(request.user)
+
+        return render(request, 'user_center_site.html', {'page': 'address', 'address': address})
+
+    def post(self, request):
+        receiver = request.POST.get('receiver')
+        addr = request.POST.get('addr')
+        zip_code = request.POST.get('zip_code')
+        phone = request.POST.get('phone')
+
+        if not all([receiver, addr, phone]):
+            return render(request, 'user_center_site.html', {'page': 'address', 'errmsg': '数据不完整!'})
+
+        reg = '1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\d{8}'
+        if not re.match(reg, phone):
+            return render(request, 'user_center_site.html', {'page': 'address', 'errmsg': '手机号码格式错误!'})
+
+        address = Address.objects.get_default_address(request.user)
+
+        is_dafault = False if address else True
+
+        Address.objects.create(
+            user=request.user,
+            receiver=receiver,
+            zip_code=zip_code,
+            addr=addr,
+            phone=phone,
+            is_default=is_dafault,
+        )
+
+        return redirect(reverse('user:address'))

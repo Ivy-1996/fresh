@@ -1,0 +1,31 @@
+{% extends 'base_user_center.html' %}
+
+{% block right_content %}
+    <div class="right_content clearfix">
+        <div class="info_con clearfix">
+            <h3 class="common_title2">基本信息</h3>
+            <ul class="user_info_list">
+                <li><span>用户名：</span>{{ user.username }}</li>
+                <li><span>联系方式：</span>{{ address.phone|default:'无默认联系方式' }}</li>
+                <li><span>联系地址：</span>{{ address.addr|default:'无默认收货地址' }}</li>
+
+
+            </ul>
+        </div>
+
+        <h3 class="common_title2">最近浏览</h3>
+        <div class="has_view_list">
+            <ul class="goods_type_list clearfix">
+                <li>
+                    <a href=""><img src="" alt=""></a>
+                    <h4><a href=""></a></h4>
+                    <div class="operate">
+                        <span class="prize">￥</span>
+                        <span class="unit"></span>
+                        <a href="#" class="add_goods" title="加入购物车"></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock right_content %}

@@ -1,15 +1,11 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE >
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>天天生鲜-登录</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-</head>
-<body>
+{% block title %}天天生鲜-登录{% endblock %}
+{% block header_con %}{% endblock %}
+{% block search_bar %}{% endblock %}
+{% block body %}
 <div class="login_top clearfix">
-    <a href="index_2.html" class="login_logo"><img src="{% static 'images/logo02.png' %}" alt=""></a>
+    <a href="index.html" class="login_logo"><img src="{% static 'images/logo02.png' %}" alt=""></a>
 </div>
 
 <div class="login_form_bg">
@@ -41,19 +37,5 @@
     </div>
 </div>
 
-<div class="footer no-mp">
-    <div class="foot_link">
-        <a href="#">关于我们</a>
-        <span>|</span>
-        <a href="#">联系我们</a>
-        <span>|</span>
-        <a href="#">招聘人才</a>
-        <span>|</span>
-        <a href="#">友情链接</a>
-    </div>
-    <p>CopyRight © 2016 北京天天生鲜信息技术有限公司 All Rights Reserved</p>
-    <p>电话：010-****888 京ICP备*******8号</p>
-</div>
+{% endblock %}
 
-</body>
-</html>
