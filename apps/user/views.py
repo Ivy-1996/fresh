@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.views import View
 from django.conf import settings
 from apps.user.models import User
+from django.contrib.auth import authenticate, login, logout
 import re
 from itsdangerous import JSONWebSignatureSerializer as Serializer
 from itsdangerous import BadSignature
@@ -47,12 +48,43 @@ class RegisterView(View):
 
         send_register_mail(email, username, token)
 
-        return redirect(reverse('goods:index'))
+        return redirect(reverse('user:login'))
 
 
 class LoginView(View):
     def get(self, request):
-        return render(request, 'login.html')
+        username = request.COOKIES.get('username', '')
+
+        checked = 'checked' if username else ''
+
+        return render(request, 'login.html', {'username': username, 'checked': checked})
+
+    def post(self, request):
+        username = request.POST.get('username')
+        password = request.POST.get('pwd')
+        if not all([username, password]):
+            return render(request, 'login.html', {'errmsg': '数据不完整!'})
+
+        user = authenticate(username=username, password=password)
+
+        if user is None:
+            return render(request, 'login.html', {'errmsg': '用户名或密码错误!'})
+
+        if not user.is_active:
+            return render(request, 'login.html', {'errmsg': '用户未激活!'})
+
+        login(request, user)
+
+        response = redirect(reverse('goods:index'))
+
+        remember = request.POST.get('remember')
+
+        if remember == 'on':
+            response.set_cookie('username', username, max_age=7 * 24 * 3600)
+        else:
+            response.delete_cookie('username')
+
+        return response
 
 
 class ActiveView(View):

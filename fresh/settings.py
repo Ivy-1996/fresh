@@ -170,7 +170,7 @@ CACHES = {
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "session"
 
-EMAIL_BACKEND = 'django.core.Mails.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # 邮件设置
 EMAIL_USE_SSL = True
@@ -181,7 +181,7 @@ EMAIL_HOST_PASSWORD = 'qngkmtqtcakvbgaf'
 EMAIL_FROM = '<919624032@qq.com>'
 
 
-DOMAIN = '127.0.0.1:8000'
+DOMAIN = 'http://127.0.0.1:8000/'
 
 LOGIN_URL = '/user/login'
 
