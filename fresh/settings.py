@@ -25,7 +25,7 @@ SECRET_KEY = '858jnnp^1w*f02*eqytc1m0-_79%b3je$uv95)@$n+$g64)*0&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -188,3 +188,6 @@ LOGIN_URL = '/user/login'
 FDFS_CLIENT_CONF = os.path.join(BASE_DIR, 'client.conf')
 
 IMG_URL = 'http://img.summerleaves.cn/'
+
+# 设置django文件的存库类
+DEFAULT_FILE_STORAGE = 'utils.storage.FdfsStorage'

@@ -16,15 +16,19 @@
         <h3 class="common_title2">最近浏览</h3>
         <div class="has_view_list">
             <ul class="goods_type_list clearfix">
-                <li>
-                    <a href=""><img src="" alt=""></a>
-                    <h4><a href=""></a></h4>
-                    <div class="operate">
-                        <span class="prize">￥</span>
-                        <span class="unit"></span>
-                        <a href="#" class="add_goods" title="加入购物车"></a>
-                    </div>
-                </li>
+                {% for goods in goods_list %}
+                    <li>
+                        <a href=""><img src="{{ goods.image.url }}" alt=""></a>
+                        <h4><a href="">{{ goods.name }}</a></h4>
+                        <div class="operate">
+                            <span class="prize">￥{{ goods.price }}</span>
+                            <span class="unit">{{ goods.price }}/{{ goods.unite }}</span>
+                            <a href="#" class="add_goods" title="加入购物车"></a>
+                        </div>
+                    </li>
+                {% empty %}
+                    无历史浏览记录
+                {% endfor %}
             </ul>
         </div>
     </div>
