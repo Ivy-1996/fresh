@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from apps.goods.models import *
+from django_redis import get_redis_connection
 
 
 # Create your views here.
@@ -19,7 +20,12 @@ class IndexView(View):
             type.tltle_banner = IndexTypeGoodsBanner.objects.filter(type=type, display_type=0).order_by('index')
 
         # 获取购物车商品数量
-        cart_count = 2
+        cart_count = 0
+        if request.user.is_authenticated:
+            coon = get_redis_connection('default')
+            cart_key = 'cart_%d' % request.user.id
+            cart_count = coon.hlen(cart_key)
+
         # 模板上下文
         context = {
             'types': types,
@@ -27,4 +33,5 @@ class IndexView(View):
             'PromotionBanner': PromotionBanner,
             'cart_count': cart_count,
         }
+
         return render(request, 'index.html', context)
