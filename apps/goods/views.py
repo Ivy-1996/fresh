@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from django.views import View
 from apps.goods.models import *
+from apps.order.models import OrderGoods
 from django_redis import get_redis_connection
 
 
@@ -35,3 +36,35 @@ class IndexView(View):
         }
 
         return render(request, 'index.html', context)
+
+
+class DetailView(View):
+    def get(self, request, pk):
+        # 查询商品id是否存在
+        try:
+            sku = GoodsSKU.objects.get(pk=pk)
+        except GoodsSKU.DoesNotExist:
+            return redirect(reverse('goods:index'))
+
+        # 获取商品的分类信息
+        types = Goods.objects.all()
+        # 获取商品的评论
+        sku_orders = OrderGoods.objects.filter(sku=sku).exclude(comment='')
+        # 获取新品信息
+        new_skus = GoodsSKU.objects.filter(type=sku.type).order_by('-create_time')
+        # 获取购物车商品数量
+        cart_count = 0
+        if request.user.is_authenticated:
+            coon = get_redis_connection('default')
+            cart_key = 'cart_%d' % request.user.id
+            cart_count = coon.hlen(cart_key)
+
+        context = {
+            'sku': sku,
+            'types': types,
+            'sku_order': sku_orders,
+            'new_skus': new_skus,
+            'cart_count': cart_count,
+        }
+
+        return render(request, 'detail.html', context)

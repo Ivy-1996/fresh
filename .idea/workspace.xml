@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0c37cd1-943f-4a96-a5ad-b2e732873128" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/requeirtments.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requeirtments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/ivy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/fresh.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fresh.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/goods/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/goods/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/goods/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/goods/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base_detail_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_detail_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,34 +22,80 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/requeirtments.txt">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+            <state relative-caret-position="339">
+              <caret line="64" column="25" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fdfs_client-py-master/setup.py">
+        <entry file="file://$PROJECT_DIR$/apps/goods/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="950">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="423">
+              <caret line="68" selection-start-line="68" selection-end-line="68" />
               <folding>
-                <element signature="e#22#31#0" expanded="true" />
+                <element signature="e#0#54#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fdfs_client-py-master/fdfs_client/storage_client.py">
+        <entry file="file://$PROJECT_DIR$/apps/order/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="58" column="28" lean-forward="true" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/apps/goods/models.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="402">
+              <caret line="102" column="6" lean-forward="true" selection-start-line="102" selection-start-column="6" selection-end-line="102" selection-end-column="6" />
+              <folding>
+                <element signature="e#2534#2540#0#HTML" expanded="true" />
+                <element signature="e#2540#2546#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base_detail_list.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/goods/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1711" />
           </provider>
         </entry>
       </file>
@@ -56,14 +110,28 @@
         <option value="$PROJECT_DIR$/fdfs_client-py-master/setup.py" />
         <option value="$PROJECT_DIR$/fdfs_client-py-master/fdfs_client/storage_client.py" />
         <option value="$PROJECT_DIR$/requeirtments.txt" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/apps/goods/urls.py" />
+        <option value="$PROJECT_DIR$/apps/goods/views.py" />
+        <option value="$PROJECT_DIR$/templates/base_detail_list.html" />
+        <option value="$PROJECT_DIR$/templates/detail.html" />
       </list>
     </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="89" />
     <option name="y" value="26" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -80,7 +148,18 @@
             <path>
               <item name="fresh" type="b2602c69:ProjectViewProjectNode" />
               <item name="fresh" type="462c0819:PsiDirectoryNode" />
-              <item name="fdfs_client-py-master" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fresh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fresh" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
+              <item name="goods" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fresh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fresh" type="462c0819:PsiDirectoryNode" />
+              <item name="fresh" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -94,7 +173,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -115,8 +194,9 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="fresh.settings" />
       </envs>
-      <option name="SDK_HOME" value="D:\python\python.exe" />
+      <option name="SDK_HOME" value="E:\venv\fresh\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -133,6 +213,10 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
+    <option name="myConnectionType" value="NONE" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -146,23 +230,25 @@
       <workItem from="1564756359844" duration="275000" />
       <workItem from="1564762539774" duration="377000" />
       <workItem from="1564762992227" duration="364000" />
-      <workItem from="1564763798023" duration="823000" />
+      <workItem from="1564763798023" duration="1588000" />
+      <workItem from="1564797478788" duration="4756000" />
+      <workItem from="1564843135829" duration="4458000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1839000" />
+    <option name="totallyTimeSpent" value="11818000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18336888" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18763326" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32502708" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -171,8 +257,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.30010834" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.57204765" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.5460455" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -184,9 +270,19 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/fdfs_client-py-master/setup.cfg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fdfs_client-py-master/fdfs_client/storage_client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="36" lean-forward="true" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/fdfs_client-py-master/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
+        <state relative-caret-position="823">
           <caret line="38" selection-start-line="38" selection-end-line="38" />
           <folding>
             <element signature="e#22#31#0" expanded="true" />
@@ -194,22 +290,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fdfs_client-py-master/fdfs_client/storage_client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fdfs_client-py-master/setup.cfg">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/requeirtments.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        <state relative-caret-position="400">
+          <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="25">
+            <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fresh/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="24" column="46" lean-forward="true" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1711" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="64" column="25" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/goods/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/goods/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base_detail_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="102" column="6" lean-forward="true" selection-start-line="102" selection-start-column="6" selection-end-line="102" selection-end-column="6" />
+          <folding>
+            <element signature="e#2534#2540#0#HTML" expanded="true" />
+            <element signature="e#2540#2546#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/order/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="58" column="28" lean-forward="true" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/goods/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
