@@ -28,6 +28,17 @@
                     <a href="javascript:;" class="minus fr">-</a>
                 </div>
             </div>
+            <div>
+                <p>其他规格：</p>
+                <ul>
+                    {% for sku in same_spu_skus %}
+                        <li><a href="{% url 'goods:detail' sku.id %}">{{ sku.name }}</a></li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+
+
             <div class="total">总价：<em>16.80元</em></div>
             <div class="operate_btn">
                 <a href="javascript:;" class="buy_btn">立即购买</a>
@@ -42,11 +53,11 @@
                 <h3>新品推荐</h3>
                 <ul>
                     {% for sku in new_skus %}
-                    <li>
-                        <a href="{% url 'goods:detail' sku.id %}"><img src="{{ sku.image.url }}"></a>
-                        <h4><a href="#">{{ sku.name }}</a></h4>
-                        <div class="prize">￥{{ sku.price }}</div>
-                    </li>
+                        <li>
+                            <a href="{% url 'goods:detail' sku.id %}"><img src="{{ sku.image.url }}" alt=""></a>
+                            <h4><a href="#">{{ sku.name }}</a></h4>
+                            <div class="prize">￥{{ sku.price }}</div>
+                        </li>
                     {% endfor %}
                 </ul>
             </div>
@@ -68,8 +79,8 @@
             <div class="tab_content">
                 <dl>
                     {% for order in sku_order %}
-                    <dt>评论时间：{{ order.update_time }}&nbsp;&nbsp;用户名：{{ order.order.user.username }}</dt>
-                    <dd>评论内容：{{ order.comment }}</dd>
+                        <dt>评论时间：{{ order.update_time }}&nbsp;&nbsp;用户名：{{ order.order.user.username }}</dt>
+                        <dd>评论内容：{{ order.comment }}</dd>
                     {% endfor %}
                 </dl>
             </div>
@@ -80,26 +91,26 @@
     <div class="add_jump"></div>
 {% endblock %}
 {% block bottomfiles %}
-<script type="text/javascript" src="js/jquery-1.12.2.js"></script>
-<script type="text/javascript">
-    var $add_x = $('#add_cart').offset().top;
-    var $add_y = $('#add_cart').offset().left;
+    <script type="text/javascript" src="js/jquery-1.12.2.js"></script>
+    <script type="text/javascript">
+        var $add_x = $('#add_cart').offset().top;
+        var $add_y = $('#add_cart').offset().left;
 
-    var $to_x = $('#show_count').offset().top;
-    var $to_y = $('#show_count').offset().left;
+        var $to_x = $('#show_count').offset().top;
+        var $to_y = $('#show_count').offset().left;
 
-    $(".add_jump").css({'left': $add_y + 80, 'top': $add_x + 10, 'display': 'block'})
-    $('#add_cart').click(function () {
-        $(".add_jump").stop().animate({
-                'left': $to_y + 7,
-                'top': $to_x + 7
-            },
-            "fast", function () {
-                $(".add_jump").fadeOut('fast', function () {
-                    $('#show_count').html(2);
+        $(".add_jump").css({'left': $add_y + 80, 'top': $add_x + 10, 'display': 'block'})
+        $('#add_cart').click(function () {
+            $(".add_jump").stop().animate({
+                    'left': $to_y + 7,
+                    'top': $to_x + 7
+                },
+                "fast", function () {
+                    $(".add_jump").fadeOut('fast', function () {
+                        $('#show_count').html(2);
+                    });
+
                 });
-
-            });
-    })
-</script>
+        })
+    </script>
 {% endblock %}
