@@ -23,4 +23,5 @@ urlpatterns = [
     path('order/', include('apps.order.urls'), name='order'),
     path('', include('apps.goods.urls'), name='goods'),
     path('tinymce/', include('tinymce.urls')),
+    path('search', include('haystack.urls')),
 ]

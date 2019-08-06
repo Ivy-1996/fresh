@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -27,7 +26,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'haystack',
     'tinymce',
     'apps.cart',
     'apps.user',
@@ -74,7 +73,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'fresh.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
@@ -88,7 +86,6 @@ DATABASES = {
         'PORT': 3306,
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -107,7 +104,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
@@ -135,7 +131,6 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-
 # 富文本编辑器配置
 TINYMCE_DEFAULT_CONFIG = {
     'theme': 'advanced',
@@ -145,7 +140,6 @@ TINYMCE_DEFAULT_CONFIG = {
 
 # redis地址
 REDIS_URL = "redis://:qwe123@39.108.125.89:6379/{}"
-
 
 # 缓存配置
 CACHES = {
@@ -180,7 +174,6 @@ EMAIL_HOST_USER = '919624032@qq.com'
 EMAIL_HOST_PASSWORD = 'qngkmtqtcakvbgaf'
 EMAIL_FROM = '<919624032@qq.com>'
 
-
 DOMAIN = 'http://127.0.0.1:8000/'
 
 LOGIN_URL = '/user/login'
@@ -191,3 +184,19 @@ IMG_URL = 'http://img.summerleaves.cn/'
 
 # 设置django文件的存库类
 DEFAULT_FILE_STORAGE = 'utils.storage.FdfsStorage'
+
+# 全文检索框架配置
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        # 使用whoosh引擎
+        # 'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'ENGINE': 'haystack.backends.whoosh_cn_backend.WhooshEngine',
+        # 索引文件路径
+        'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
+    },
+}
+
+# 当添加、修改、删除数据时，自动生成索引
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 6  # 指定搜索结果每页显示多少条信息

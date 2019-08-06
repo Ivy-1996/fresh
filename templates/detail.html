@@ -1,4 +1,5 @@
 {% extends 'base_detail_list.html' %}
+{% load static %}
 {% block title %}天天生鲜-商品详情{% endblock %}
 
 {% block main_content %}
@@ -42,7 +43,7 @@
             <div class="total">总价：<em>16.80元</em></div>
             <div class="operate_btn">
                 <a href="javascript:;" class="buy_btn">立即购买</a>
-                <a href="javascript:;" class="add_cart" id="add_cart">加入购物车</a>
+                <a href="javascript:;" sku_id="{{ sku.id }}" class="add_cart" id="add_cart">加入购物车</a>
             </div>
         </div>
     </div>
@@ -87,30 +88,104 @@
         </div>
     </div>
 {% endblock %}
+
 {% block bottom %}
     <div class="add_jump"></div>
+    {% csrf_token %}
 {% endblock %}
 {% block bottomfiles %}
-    <script type="text/javascript" src="js/jquery-1.12.2.js"></script>
+    <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
     <script type="text/javascript">
+        update_goods_amount();
+        function update_goods_amount() {
+            // 获取商品的数量和价格
+            var price = $('.show_pirze').children('em').text();
+            var count = $('.num_show').val();
+            // 计算商品的总价
+            price = parseFloat(price);
+            count = parseInt(count);
+            var amount = price * count;
+            $('.total').children('em').text(amount.toFixed(2) + '元');
+
+        }
+
+        // 增加商品的数量
+        $('.add').click(function () {
+            // 获取商品原油的数目
+            var count = $('.num_show').val();
+            count = parseInt(count) + 1;
+            $('.num_show').val(count);
+            update_goods_amount();
+        });
+
+
+        // 减少商品的数量
+        $('.minus').click(function () {
+            // 获取商品原油的数目
+            var count = $('.num_show').val();
+            count = parseInt(count) - 1;
+            if (count <= 0) {
+                count = 1;
+            }
+
+            $('.num_show').val(count);
+            update_goods_amount();
+        });
+
+        // 手动输入商品的数量
+        $('.num_show').blur(function () {
+            // 获取商品原油的数目
+            var count = $(this).val();
+            // 校验count是否合法
+            if (isNaN(count) || count.trim().length == 0 || parseInt(count) <= 0) {
+                count = 1
+            }
+            // 重新设置商品的数目
+            $(this).val(parseInt(count));
+            update_goods_amount();
+        });
+
+        // 获取add_cart div元素左上角坐标
         var $add_x = $('#add_cart').offset().top;
         var $add_y = $('#add_cart').offset().left;
 
+        // 获取show_count div元素左上角坐标
         var $to_x = $('#show_count').offset().top;
         var $to_y = $('#show_count').offset().left;
 
-        $(".add_jump").css({'left': $add_y + 80, 'top': $add_x + 10, 'display': 'block'})
-        $('#add_cart').click(function () {
-            $(".add_jump").stop().animate({
-                    'left': $to_y + 7,
-                    'top': $to_x + 7
-                },
-                "fast", function () {
-                    $(".add_jump").fadeOut('fast', function () {
-                        $('#show_count').html(2);
-                    });
 
-                });
+        $('#add_cart').click(function () {
+            // 获取商品的id和数量
+            var sku_id = $(this).attr('sku_id');
+            var count = $('.num_show').val();
+            var scrf = $('input[name="csrfmiddlewaretoken"]').val();
+
+            // 发起请求
+            $.ajax({
+                type: 'post',
+                url: "{% url 'cart:add' %}",
+                data: {
+                    sku_id: sku_id,
+                    count: count,
+                    csrfmiddlewaretoken: scrf,
+                },
+                success: function (data) {
+                    if (data.res === 5) {
+                        $(".add_jump").css({'left': $add_y + 80, 'top': $add_x + 10, 'display': 'block'});
+                        $(".add_jump").stop().animate({
+                                'left': $to_y + 7,
+                                'top': $to_x + 7
+                            },
+                            "fast", function () {
+                                $(".add_jump").fadeOut('fast', function () {
+                                    $('#show_count').html(data.total_count);
+                                });
+                            });
+                    } else {
+                        alert(data.errmsg)
+                    }
+                }
+            });
         })
     </script>
 {% endblock %}
