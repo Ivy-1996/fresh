@@ -66,7 +66,7 @@ class CartInfoView(LoginRequredMixIn):
             sku = GoodsSKU.objects.get(pk=sku_id)
             amount = sku.price * int(count)
             sku.amount = amount
-            sku.count = count
+            sku.count = int(count)
             skus.append(sku)
             total_count += int(count)
             total_price += amount
@@ -84,7 +84,7 @@ class CartInfoView(LoginRequredMixIn):
 class CartUpdateView(View):
     def post(self, request):
         user = request.user
-        if user.is_authenticated:
+        if not user.is_authenticated:
             return JsonResponse({'res': 0, 'errmsg': '请先登录'})
 
         sku_id = request.POST.get('sku_id')
@@ -113,4 +113,8 @@ class CartUpdateView(View):
         # 设置hash中sku对应得值
         coon.hset(cart_key, sku_id, count)
 
-        return JsonResponse({'res': 5, 'message': '更新成功!'})
+        values = coon.hvals(cart_key)
+
+        total_count = sum(values)
+
+        return JsonResponse({'res': 5, 'message': '更新成功!', 'total_count': total_count})

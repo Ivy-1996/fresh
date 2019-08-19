@@ -15,7 +15,7 @@
 	</ul>
 
 
-    <form method="post" action="{% url 'order:place' %}">
+    <form method="post" action="">
     {% csrf_token%}
     {% for sku in skus %}
 	<ul class="cart_list_td clearfix">
@@ -117,17 +117,17 @@
         var params = {'sku_id':sku_id, 'count':count, 'csrfmiddlewaretoken':csrf};
         // 更新购物车记录
         // 设置ajax 请求为同步
-        $.ajaxSettings.async = false
+        $.ajaxSettings.async = false;
         // 发起ajax post请求，访问/cart/update, 传递参数:sku_id count
         $.post('/cart/update', params, function (data) {
-            if (data.res == 5){
+            if (data.res === 5){
                 // 更新成功
-                error_update = false
+                error_update = false;
                 total_count = data.total_count
             }
             else{
                 // 更新失败
-                error_update = true
+                error_update = true;
                 alert(data.errmsg)
             }
         })
@@ -135,6 +135,7 @@
         $.ajaxSettings.async = true
     }
 
+    var total_count = 0
     // 购物车记录的增加
     $('.add').click(function () {
         // 获取商品的id和商品的数目
@@ -153,7 +154,7 @@
             // 更新商品的小计
             update_sku_amount($(this).parents('ul'))
             // 判断是否更新选中商品的总件数和总金额
-            is_checked = $(this).parents('ul').find(':checkbox').prop('checked')
+            is_checked = $(this).parents('ul').find(':checkbox').prop('checked');
             if (is_checked){
                 // 更新页面信息
                 update_page_info()
