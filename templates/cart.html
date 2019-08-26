@@ -59,7 +59,7 @@
             var count = $(this).find('.num_show').val();
             var amount = $(this).children('.col07').text();
             // 累加计算商品的总件数和总金额
-            total_count += parseInt(count)
+            total_count += parseInt(count);
             total_price += parseFloat(amount)
         });
         // 设置选中商品的总件数和总金额
@@ -135,7 +135,7 @@
         $.ajaxSettings.async = true
     }
 
-    var total_count = 0
+    var total_count = 0;
     // 购物车记录的增加
     $('.add').click(function () {
         // 获取商品的id和商品的数目
@@ -167,8 +167,9 @@
     // 购物车记录的减少
     $('.minus').click(function () {
         // 获取商品的id和商品的数目
-        var count = $(this).prev().val()
-        var sku_id = $(this).prev().attr('sku_id')
+        console.log('666')
+        var count = $(this).prev().val();
+        var sku_id = $(this).prev().attr('sku_id');
 
         count = parseInt(count)-1
         if (count <= 0){
@@ -242,7 +243,7 @@
     // 删除购物车记录
     $('.cart_list_td').children('.col08').children('a').click(function () {
         // 获取商品的id
-        var sku_id = $(this).parents('ul').find('.num_show').attr('sku_id')
+        var sku_id = $(this).parents('ul').find('.num_show').attr('sku_id');
         var csrf = $('input[name="csrfmiddlewaretoken"]').val()
         var sku_ul = $(this).parents('ul')
         // 组织参数

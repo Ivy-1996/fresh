@@ -118,3 +118,36 @@ class CartUpdateView(View):
         total_count = sum(values)
 
         return JsonResponse({'res': 5, 'message': '更新成功!', 'total_count': total_count})
+
+
+class CartDeleteView(View):
+    def post(self, request):
+        user = request.user
+        if not user.is_authenticated:
+            return JsonResponse({'res': 0, 'errmsg': '请先登录'})
+
+        sku_id = request.POST.get('sku_id')
+
+        if not sku_id:
+            return JsonResponse({'res': 1, 'errmsg': '无效的商品id'})
+
+        try:
+            GoodsSKU.objects.get(pk=sku_id)
+        except GoodsSKU.DoesNotExist:
+            return JsonResponse({'res': 2, 'errmsg': '商品不存在!'})
+
+        coon = get_redis_connection('default')
+
+        cart_key = 'cart_%d' % user.id
+
+        coon.hdel(cart_key, sku_id)
+
+        values = coon.hvals(cart_key)
+
+        values = [int(value.decode()) for value in values]
+
+        print(values)
+
+        total_count = sum(values)
+
+        return JsonResponse({'res': 3, 'message': '删除成功!', 'total_count': total_count})
