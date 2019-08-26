@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from django.http import JsonResponse
 from django_redis import get_redis_connection
-from apps.goods.models import GoodsSKU
+from goods.models import GoodsSKU
 from utils.mixin import LoginRequredMixIn
 
 

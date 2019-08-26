@@ -3,8 +3,8 @@ from django.views import View
 from django.conf import settings
 from django_redis import get_redis_connection
 from django.contrib.auth import authenticate, login, logout
-from apps.user.models import User, Address
-from apps.goods.models import GoodsSKU
+from user.models import User, Address
+from goods.models import GoodsSKU
 import re
 from itsdangerous import JSONWebSignatureSerializer as Serializer
 from itsdangerous import BadSignature

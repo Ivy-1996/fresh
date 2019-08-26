@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, reverse
 from django.core.paginator import Paginator
 from django.views import View
-from apps.goods.models import *
-from apps.order.models import OrderGoods
+from goods.models import *
+from order.models import OrderGoods
 from django_redis import get_redis_connection
 
 

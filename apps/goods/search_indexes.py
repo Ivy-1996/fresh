@@ -1,6 +1,6 @@
 # 定义索引类
 from haystack import indexes
-from apps.goods.models import GoodsSKU
+from goods.models import GoodsSKU
 
 
 class GoodsSKUIndex(indexes.SearchIndex, indexes.Indexable):

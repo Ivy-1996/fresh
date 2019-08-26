@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.goods.models import *
+from goods.models import *
 # Register your models here.
 
 admin.site.register(GoodsType)
