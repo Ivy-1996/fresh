@@ -1,147 +1,117 @@
 {% extends 'base_no_cart.html' %}
+{% load static %}
 {% block title %}天天生鲜-提交订单{% endblock %}
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-</head>
-<body>
-	<div class="header_con">
-		<div class="header">
-			<div class="welcome fl">欢迎来到天天生鲜!</div>
-			<div class="fr">
-				<div class="login_info fl">
-					欢迎您：<em>张 山</em>
-				</div>
-				<div class="login_btn fl">
-					<a href="login.html">登录</a>
-					<span>|</span>
-					<a href="register.html">注册</a>
-				</div>
-				<div class="user_link fl">
-					<span>|</span>
-					<a href="../templates/user_center_info.html">用户中心</a>
-					<span>|</span>
-					<a href="../templates/cart.html">我的购物车</a>
-					<span>|</span>
-					<a href="../templates/user_center_order.html">我的订单</a>
-				</div>
-			</div>
-		</div>
-	</div>
+{% block page_title %}提交订单{% endblock %}
+{% block body %}
 
-	<div class="search_bar clearfix">
-		<a href="index_2.html" class="logo fl"><img src="images/logo.png"></a>
-		<div class="sub_page_name fl">|&nbsp;&nbsp;&nbsp;&nbsp;提交订单</div>
-		<div class="search_con fr">
-			<input type="text" class="input_text fl" name="" placeholder="搜索商品">
-			<input type="button" class="input_btn fr" name="" value="搜索">
-		</div>
-	</div>
-	
-	<h3 class="common_title">确认收货地址</h3>
+    <h3 class="common_title">确认收货地址</h3>
 
-	<div class="common_list_con clearfix">
-		<dl>
-			<dt>寄送到：</dt>
-			<dd><input type="radio" name="" checked="">北京市 海淀区 东北旺西路8号中关村软件园 （李思 收） 182****7528</dd>
-		</dl>
-		<a href="../templates/user_center_site.html" class="edit_site">编辑收货地址</a>
+    <div class="common_list_con clearfix">
+        <dl>
+            <dt>寄送到：</dt>
+            {% for addr in addrs %}
+                <dd><input type="radio" name="addr_id" value="{{ addr.id }}"
+                           {% if addr.is_default %}checked{% endif %}>{{ addr.addr }} （{{ addr.receiver }}
+                    收） {{ addr.phone }}</dd>
+            {% endfor %}
+        </dl>
+        <a href="../templates/user_center_site.html" class="edit_site">编辑收货地址</a>
 
-	</div>
-	
-	<h3 class="common_title">支付方式</h3>	
-	<div class="common_list_con clearfix">
-		<div class="pay_style_con clearfix">
-			<input type="radio" name="pay_style" checked>
-			<label class="cash">货到付款</label>
-			<input type="radio" name="pay_style">
-			<label class="weixin">微信支付</label>
-			<input type="radio" name="pay_style">
-			<label class="zhifubao"></label>
-			<input type="radio" name="pay_style">
-			<label class="bank">银行卡支付</label>
-		</div>
-	</div>
+    </div>
 
-	<h3 class="common_title">商品列表</h3>
-	
-	<div class="common_list_con clearfix">
-		<ul class="goods_list_th clearfix">
-			<li class="col01">商品名称</li>
-			<li class="col02">商品单位</li>
-			<li class="col03">商品价格</li>
-			<li class="col04">数量</li>
-			<li class="col05">小计</li>		
-		</ul>
-		<ul class="goods_list_td clearfix">
-			<li class="col01">1</li>			
-			<li class="col02"><img src="images/goods/goods012.jpg"></li>
-			<li class="col03">奇异果</li>
-			<li class="col04">500g</li>
-			<li class="col05">25.80元</li>
-			<li class="col06">1</li>
-			<li class="col07">25.80元</li>	
-		</ul>
-		<ul class="goods_list_td clearfix">
-			<li class="col01">2</li>			
-			<li class="col02"><img src="images/goods/goods003.jpg"></li>
-			<li class="col03">大兴大棚草莓</li>
-			<li class="col04">500g</li>
-			<li class="col05">16.80元</li>
-			<li class="col06">1</li>
-			<li class="col07">16.80元</li>	
-		</ul>
-	</div>
+    <h3 class="common_title">支付方式</h3>
+    <div class="common_list_con clearfix">
+        <div class="pay_style_con clearfix">
+            <input type="radio" name="pay_style" checked value="1">
+            <label class="cash">货到付款</label>
+            <input type="radio" name="pay_style" value="2">
+            <label class="weixin">微信支付</label>
+            <input type="radio" name="pay_style" value="3">
+            <label class="zhifubao"></label>
+            <input type="radio" name="pay_style" value="4">
+            <label class="bank">银行卡支付</label>
+        </div>
+    </div>
 
-	<h3 class="common_title">总金额结算</h3>
+    <h3 class="common_title">商品列表</h3>
 
-	<div class="common_list_con clearfix">
-		<div class="settle_con">
-			<div class="total_goods_count">共<em>2</em>件商品，总金额<b>42.60元</b></div>
-			<div class="transit">运费：<b>10元</b></div>
-			<div class="total_pay">实付款：<b>52.60元</b></div>
-		</div>
-	</div>
+    <div class="common_list_con clearfix">
+        <ul class="goods_list_th clearfix">
+            <li class="col01">商品名称</li>
+            <li class="col02">商品单位</li>
+            <li class="col03">商品价格</li>
+            <li class="col04">数量</li>
+            <li class="col05">小计</li>
+        </ul>
+        {% for sku in skus %}
+            <ul class="goods_list_td clearfix">
+                <li class="col01">{{ forloop.counter }}</li>
+                <li class="col02"><img src="{{ sku.image.url }}" alt=""></li>
+                <li class="col03">{{ sku.name }}</li>
+                <li class="col04">{{ sku.unite }}</li>
+                <li class="col05">{{ sku.price }}元</li>
+                <li class="col06">{{ sku.count }}</li>
+                <li class="col07">{{ sku.amount }}元</li>
+            </ul>
+        {% endfor %}
 
-	<div class="order_submit clearfix">
-		<a href="javascript:;" id="order_btn">提交订单</a>
-	</div>	
+    </div>
 
-	<div class="footer">
-		<div class="foot_link">
-			<a href="#">关于我们</a>
-			<span>|</span>
-			<a href="#">联系我们</a>
-			<span>|</span>
-			<a href="#">招聘人才</a>
-			<span>|</span>
-			<a href="#">友情链接</a>		
-		</div>
-		<p>CopyRight © 2016 北京天天生鲜信息技术有限公司 All Rights Reserved</p>
-		<p>电话：010-****888    京ICP备*******8号</p>
-	</div>
+    <h3 class="common_title">总金额结算</h3>
 
-	<div class="popup_con">
-		<div class="popup">
-			<p>订单提交成功！</p>
-		</div>
-		
-		<div class="mask"></div>
-	</div>
-	<script type="text/javascript" src="js/jquery-1.12.2.js"></script>
-	<script type="text/javascript">
-		$('#order_btn').click(function() {
-			localStorage.setItem('order_finish',2);
+    <div class="common_list_con clearfix">
+        <div class="settle_con">
+            <div class="total_goods_count">共<em>{{ total_count }}</em>件商品，总金额<b>{{ total_price }}元</b></div>
+            <div class="transit">运费：<b>{{ transit_price }}元</b></div>
+            <div class="total_pay">实付款：<b>{{ total_pay }}元</b></div>
+        </div>
+    </div>
 
-			$('.popup_con').fadeIn('fast', function() {
+    <div class="order_submit clearfix">
+        {% csrf_token %}
+        <a href="javascript:;" sku_ids="{{ sku_ids }}" id="order_btn">提交订单</a>
+    </div>
+{% endblock %}
 
-				setTimeout(function(){
-					$('.popup_con').fadeOut('fast',function(){
-						window.location.href = 'index_2.html';
-					});	
-				},3000)
-				
-			});
-		});
-	</script>
-</body>
-</html>
+{% block bottom %}
+    <div class="popup_con">
+        <div class="popup">
+            <p>订单提交成功！</p>
+        </div>
+
+        <div class="mask"></div>
+    </div>
+{% endblock %}
+{% block bottomfiles %}
+    <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <script type="text/javascript">
+        $('#order_btn').click(function () {
+            // 获取用户的选择的地址，支付方式， 要购买的商品的id的字符串
+
+            var addr_id = $('input[name="addr_id"]:checked').val();
+            var pay_method = $('input[name="pay_style"]:checked').val();
+            var sku_ids = $(this).attr('sku_ids');
+            var csrf = $('input[name="csrfmiddlewaretoken"]').val();
+            $.ajax({
+                url: "{% url 'order:commit' %}",
+                type: 'post',
+                data: {
+                    addr_id: addr_id,
+                    pay_method: pay_method,
+                    sku_ids: sku_ids,
+                    csrfmiddlewaretoken: csrf,
+                },
+                success: function (data) {
+                    if (data.res === 5) {
+                        alert('创建成功!')
+                    } else {
+                        alert(data.errmsg)
+                    }
+                }
+
+            })
+        })
+
+
+    </script>
+{% endblock %}

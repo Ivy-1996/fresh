@@ -15,7 +15,7 @@
 	</ul>
 
 
-    <form method="post" action="">
+    <form method="post" action="{% url 'order:place' %}">
     {% csrf_token%}
     {% for sku in skus %}
 	<ul class="cart_list_td clearfix">
