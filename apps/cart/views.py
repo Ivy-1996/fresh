@@ -146,7 +146,6 @@ class CartDeleteView(View):
 
         values = [int(value.decode()) for value in values]
 
-        print(values)
 
         total_count = sum(values)
 
