@@ -189,8 +189,8 @@ DEFAULT_FILE_STORAGE = 'utils.storage.FdfsStorage'
 HAYSTACK_CONNECTIONS = {
     'default': {
         # 使用whoosh引擎
-        # 'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
-        'ENGINE': 'haystack.backends.whoosh_cn_backend.WhooshEngine',
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        # 'ENGINE': 'haystack.backends.whoosh_cn_backend.WhooshEngine',
         # 索引文件路径
         'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
     },
