@@ -6,6 +6,7 @@ from utils.mixin import LoginRequredMixIn
 from django.http import JsonResponse
 from order.models import OrderInfo, OrderGoods
 from datetime import datetime
+from django.db import transaction
 
 
 # Create your views here.
@@ -63,6 +64,8 @@ class OrderPlaceView(LoginRequredMixIn):
 
 
 class OrderCommitView(LoginRequredMixIn):
+
+    @transaction.atomic
     def post(self, request):
         user = request.user
 
@@ -91,53 +94,66 @@ class OrderCommitView(LoginRequredMixIn):
         transit_price = 10  # 假数据， 写死
         total_count = 0
         total_price = 0
-        # TODO  想订单信息表中添加一条记录
-        order = OrderInfo.objects.create(
-            order_id=order_id,
-            user=user,
-            addr=addr,
-            pay_method=pay_method,
-            total_count=total_count,
-            total_price=total_price,
-            transit_price=transit_price
-        )
-
         coon = get_redis_connection('default')
         cart_key = 'cart_%d' % user.id
-        # todo 用户的订单中有几个商品就要添加几条记录
-        sku_ids = sku_ids.split(',')
-        for sku_id in sku_ids:
-            try:
-                sku = GoodsSKU.objects.get(id=sku_id)
-            except GoodsSKU.DoesNotExist:
-                return JsonResponse({'res': 4, 'errmsg': '商品不存在!'})
-
-            # 获取商品的数目
-            count = coon.hget(cart_key, sku_id)
-
-            # todo to订单信息表中添加一条记录
-            OrderGoods.objects.create(
-                order=order,
-                sku=sku,
-                count=int(count),
-                price=sku.price,
+        # 设置保存点
+        save_id = transaction.savepoint()
+        try:
+            # TODO  想订单信息表中添加一条记录
+            order = OrderInfo.objects.create(
+                order_id=order_id,
+                user=user,
+                addr=addr,
+                pay_method=pay_method,
+                total_count=total_count,
+                total_price=total_price,
+                transit_price=transit_price
             )
 
-            # todo 更新商品的库存销量和库存
-            sku.stock -= int(count)
-            sku.sales += int(count)
-            sku.save()
+            # todo 用户的订单中有几个商品就要添加几条记录
+            sku_ids = sku_ids.split(',')
+            for sku_id in sku_ids:
+                try:
+                    sku = GoodsSKU.objects.get(id=sku_id)
+                except GoodsSKU.DoesNotExist:
+                    transaction.savepoint_rollback(save_id)
+                    return JsonResponse({'res': 4, 'errmsg': '商品不存在!'})
 
-            # todo 累加计算商品的订单的总数量和总价格
-            amount = sku.price * int(count)
-            total_count += int(count)
-            total_price += amount
+                # 获取商品的数目
+                count = coon.hget(cart_key, sku_id)
 
-        # todo 更新订单信息表中的商品的总数量和价格
-        order.total_count = total_count
-        order.total_price = total_price
-        order.save()
+                # todo 判断商品的库存
+                if int(count) > sku.stock:
+                    transaction.savepoint_rollback(save_id)
+                    return JsonResponse({'res': 6, 'errmsg': '商品库存不足'})
 
+                # todo to订单信息表中添加一条记录
+                OrderGoods.objects.create(
+                    order=order,
+                    sku=sku,
+                    count=int(count),
+                    price=sku.price,
+                )
+
+                # todo 更新商品的库存销量和库存
+                sku.stock -= int(count)
+                sku.sales += int(count)
+                sku.save()
+
+                # todo 累加计算商品的订单的总数量和总价格
+                amount = sku.price * int(count)
+                total_count += int(count)
+                total_price += amount
+
+            # todo 更新订单信息表中的商品的总数量和价格
+            order.total_count = total_count
+            order.total_price = total_price
+            order.save()
+        except Exception:
+            transaction.savepoint_rollback(save_id)
+            return JsonResponse({'res': 7, 'errmsg': '下单失败!'})
+        # 提交
+        transaction.savepoint_commit(save_id)
         # todo 清楚用户的购物车记录
         coon.hdel(cart_key, *sku_ids)
 
