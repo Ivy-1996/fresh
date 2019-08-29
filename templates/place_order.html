@@ -103,7 +103,15 @@
                 },
                 success: function (data) {
                     if (data.res === 5) {
-                        alert('创建成功!')
+                        localStorage.setItem('order_finish', 2);
+
+                        $('.popup_con').fadeIn('fast', function () {
+                            setTimeout(function () {
+                                $('.popup_con').fadeOut('fast', function () {
+                                    window.location.href = '/user/order/';
+                                });
+                            }, 3000)
+                        });
                     } else {
                         alert(data.errmsg)
                     }

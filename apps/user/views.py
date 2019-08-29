@@ -11,6 +11,8 @@ from itsdangerous import BadSignature
 import time
 from celery_tasks.task import send_register_mail
 from utils.mixin import LoginRequredMixIn
+from order.models import OrderInfo, OrderGoods
+from django.core.paginator import Paginator
 
 
 # Create your views here.
@@ -140,9 +142,52 @@ class UserInfoView(LoginRequredMixIn):
 
 
 class UserOrderView(LoginRequredMixIn):
-    def get(self, request):
+    def get(self, request, page):
         # 获取用户的订单信息
-        return render(request, 'user_center_order.html', {'page': 'order'})
+        user = request.user
+
+        orders = OrderInfo.objects.filter(user=user).order_by('-create_time')
+
+        for order in orders:
+            order_skus = OrderGoods.objects.filter(order_id=order.order_id)
+
+            for order_sku in order_skus:
+                amount = order_sku.count * order_sku.price
+                order_sku.amount = amount
+
+            order.order_skus = order_skus
+            order.status_name = OrderInfo.ORDER_STATUS[order.order_status]
+        paginator = Paginator(orders, 1)
+
+        # 对页码进行容错处理
+        try:
+            page = int(page)
+        except Exception:
+            page = 1
+
+        if page > paginator.num_pages:
+            page = paginator.num_pages
+
+        order_page = paginator.page(page)
+
+        # TODO 页码控制
+        num_pages = paginator.num_pages
+        if num_pages < 5:
+            pages = range(1, num_pages + 1)
+        elif page <= 3:
+            pages = range(1, 6)
+        elif num_pages - page <= 2:
+            pages = range(num_pages - 4, num_pages + 1)
+        else:
+            pages = range(page - 2, page + 3)
+
+        context = {
+            'order_page': order_page,
+            'pages': pages,
+            'page': 'order'
+        }
+
+        return render(request, 'user_center_order.html', context)
 
 
 class AddressView(LoginRequredMixIn):

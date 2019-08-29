@@ -1,0 +1,47 @@
+{% extends 'base_detail_list.html' %}
+{% block title %}天天生鲜-商品搜索结果页面{% endblock %}
+
+{% block main_content %}
+
+    <div class="breadcrumb">
+        <a href="#">{{ query }}</a>
+        <span>></span>
+        <a href="#">搜索结果如下:</a>
+    </div>
+
+    <div class="main_wrap clearfix">
+
+
+        <ul class="goods_type_list clearfix">
+            {% for item in page %}
+
+                <li>
+                    <a href="{% url 'goods:detail' item.object.id %}"><img src="{{ item.object.image.url }}"></a>
+                    <h4><a href="{% url 'goods:detail' item.object.id %}">{{ item.object.name }}</a></h4>
+                    <div class="operate">
+                        <span class="prize">￥{{ item.object.price }}</span>
+                        <span class="unit">{{ item.object.price }}/{{ sku.unite }}</span>
+                        <a href="{% url 'goods:detail' item.object.id %}" class="add_goods" title="加入购物车"></a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+
+{#        <div class="pagenation">#}
+{#            {% if skus_page.has_previous %}#}
+{#                <a href="{% url 'goods:list' type.id skus_page.previous_page_number %}?sort={{ sort }}">上一页</a>#}
+{#            {% endif %}#}
+{#            {% for page in skus_page.paginator.page_range %}#}
+{#                {% if page == skus_page.number %}#}
+{#                    <a href="{% url 'goods:list' type.id page %}" class="active">{{ page }}</a>#}
+{#                {% else %}#}
+{#                    <a href="{% url 'goods:list' type.id page %}">{{ page }}</a>#}
+{#                {% endif %}#}
+{#            {% endfor %}#}
+{#            {% if skus_page.has_next %}#}
+{#                <a href="{% url 'goods:list' type.id skus_page.next_page_number %}?sort={{ sort }}">下一页></a>#}
+{#            {% endif %}#}
+{#        </div>#}
+    </div>
+
+{% endblock %}

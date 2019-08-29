@@ -5,46 +5,49 @@
         {% csrf_token %}
         <h3 class="common_title2">全部订单</h3>
 
+        {% for order in order_page %}
+            <ul class="order_list_th w978 clearfix">
+                <li class="col01">{{ order.create_time }}</li>
+                <li class="col02">订单号：{{ order.order_id }}</li>
+                <li class="col02 stress">{{ order.status_name }}</li>
+            </ul>
 
-        <ul class="order_list_th w978 clearfix">
-            <li class="col01"></li>
-            <li class="col02">订单号：</li>
-            <li class="col02 stress"></li>
-        </ul>
-
-        <table class="order_list_table w980">
-            <tbody>
-            <tr>
-                <td width="55%">
-
-                    <ul class="order_goods_list clearfix">
-                        <li class="col01"><img src=""></li>
-                        <li class="col02"><em>元/</em></li>
-                        <li class="col03"></li>
-                        <li class="col04">元</li>
-                    </ul>
-
-                </td>
-                <td width="15%">(含运费:)元</td>
-                <td width="15%"></td>
-                <td width="15%"><a href="javascript:;" order_id="" status="" class="oper_btn">去付款</a></td>
-            </tr>
-            </tbody>
-        </table>
-
+            <table class="order_list_table w980">
+                <tbody>
+                <tr>
+                    <td width="55%">
+                        {% for order_sku in order.order_skus %}
+                            <ul class="order_goods_list clearfix">
+                                <li class="col01"><img src="{{ order_sku.sku.image.url }}"></li>
+                                <li class="col02">{{ order_sku.name }}<em>{{ order_sku.price }}元/{{ order_sku.sku.unite }}</em>
+                                </li>
+                                <li class="col03">{{ order_sku.count }}</li>
+                                <li class="col04">{{ order_sku.amount }}元</li>
+                            </ul>
+                        {% endfor %}
+                    </td>
+                    <td width="15%">{{ order.total_price|add:order.transit_price }}(含运费:{{ order.transit_price }})元</td>
+                    <td width="15%">{{ order.status_name }}</td>
+                    <td width="15%"><a href="javascript:;" order_id="" status="" class="oper_btn">去付款</a></td>
+                </tr>
+                </tbody>
+            </table>
+        {% endfor %}
 
         <div class="pagenation">
-
-            <a href=""> < 上一页</a>
-
-
-            <a href="" class="active"></a>
-
-            <a href=""></a>
-
-
-            <a href="">下一页></a>
-
+            {% if order_page.has_previous_page %}
+                <a href="{% url 'user:order' order_page.pervious_page_number %}"> < 上一页</a>
+            {% endif %}
+            {% for index in pages %}
+                {% if index == order_page.number %}
+                    <a href="{% url 'user:order' index %}" class="active">{{ index }}</a>
+                {% else %}
+                    <a href="{% url 'user:order' index %}">{{ index }}</a>
+                {% endif %}
+            {% endfor %}
+            {% if order_page.has_next_page %}
+                <a href="{% url 'user:order' order_page.next_page_number %}">下一页></a>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

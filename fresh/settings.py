@@ -203,3 +203,8 @@ HAYSTACK_SEARCH_RESULTS_PER_PAGE = 6  # 指定搜索结果每页显示多少条�
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
+
+NUMBER_OF_FAILED_ORDER_TIMES = 3
+
+
+
