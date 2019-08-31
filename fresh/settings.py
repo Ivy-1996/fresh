@@ -174,7 +174,7 @@ EMAIL_HOST_USER = '919624032@qq.com'
 EMAIL_HOST_PASSWORD = 'qngkmtqtcakvbgaf'
 EMAIL_FROM = '<919624032@qq.com>'
 
-DOMAIN = 'http://127.0.0.1:8000/'
+DOMAIN = 'http://fresh.summerleaves.cn'
 
 LOGIN_URL = '/user/login'
 
@@ -203,8 +203,10 @@ HAYSTACK_SEARCH_RESULTS_PER_PAGE = 6  # 指定搜索结果每页显示多少条�
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
-
 NUMBER_OF_FAILED_ORDER_TIMES = 3
 
+ALIPAY_APP_ID = '2016101300674998'
 
+APP_PRIVATE_KEY_PATH = os.path.join(BASE_DIR, 'app_private_key.pem')
 
+ALIPAY_PUBLIC_KEY_PATH = os.path.join(BASE_DIR, 'alipay_public_key.pem')

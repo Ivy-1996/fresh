@@ -14,7 +14,9 @@ jieba==0.39
 kombu==4.6.3
 mutagen==1.42.0
 Pillow==6.1.0
+pycryptodomex==3.7.2
 PyMySQL==0.9.3
+python-alipay-sdk==1.10.1
 pytz==2019.1
 redis==3.3.2
 requests==2.22.0
