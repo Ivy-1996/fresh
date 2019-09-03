@@ -48,7 +48,7 @@ class DetailView(View):
             return redirect(reverse('goods:index'))
 
         # 获取商品的分类信息
-        types = Goods.objects.all()
+        types = GoodsType.objects.all()
         # 获取商品的评论
         sku_orders = OrderGoods.objects.filter(sku=sku).exclude(comment='')
         # 获取新品信息
