@@ -1,1 +1,463 @@
-
+*** Starting uWSGI 2.0.18 (64bit) on [Wed Sep  4 21:55:50 2019] ***
+compiled with version: 7.4.0 on 04 September 2019 13:53:57
+os: Linux-4.15.0-58-generic #64-Ubuntu SMP Tue Aug 6 11:12:41 UTC 2019
+nodename: ivy-ubuntu
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/ivy/others/fresh
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenvs/fresh/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ivy/others/fresh
+your processes number limit is 31203
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8081 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:44639 (port auto-assigned) fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.8 (default, Jan 14 2019, 11:02:34)  [GCC 8.0.1 20180414 (experimental) [trunk revision 259383]]
+Set PythonHome to /root/.virtualenvs/fresh
+Python main interpreter initialized at 0x55bfd1137850
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x55bfd1137850 pid: 20919 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 20919)
+spawned uWSGI worker 1 (pid: 20921, cores: 2)
+spawned uWSGI worker 2 (pid: 20923, cores: 2)
+spawned uWSGI worker 3 (pid: 20925, cores: 2)
+Python auto-reloader enabled
+spawned uWSGI worker 4 (pid: 20928, cores: 2)
+spawned uWSGI http 1 (pid: 20933)
+[pid: 20928|app: 0|req: 1/1] 127.0.0.1 () {44 vars in 860 bytes} [Wed Sep  4 21:56:07 2019] GET / => generated 17436 bytes in 4927 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /static/css/reset.css
+[pid: 20928|app: 0|req: 3/2] 127.0.0.1 () {42 vars in 784 bytes} [Wed Sep  4 21:56:12 2019] GET /static/css/reset.css => generated 3085 bytes in 22 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+Not Found: /static/css/main.css
+[pid: 20928|app: 0|req: 3/3] 127.0.0.1 () {42 vars in 782 bytes} [Wed Sep  4 21:56:12 2019] GET /static/css/main.css => generated 3082 bytes in 22 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /static/js/jquery-1.12.4.min.js
+Not Found: /static/js/jquery-ui.min.js
+[pid: 20923|app: 0|req: 2/4] 127.0.0.1 () {42 vars in 789 bytes} [Wed Sep  4 21:56:12 2019] GET /static/js/jquery-1.12.4.min.js => generated 3115 bytes in 390 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 20923|app: 0|req: 2/5] 127.0.0.1 () {42 vars in 781 bytes} [Wed Sep  4 21:56:12 2019] GET /static/js/jquery-ui.min.js => generated 3103 bytes in 383 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+Not Found: /static/images/logo.png
+Not Found: /static/js/slide.js
+[pid: 20921|app: 0|req: 2/6] 127.0.0.1 () {42 vars in 809 bytes} [Wed Sep  4 21:56:12 2019] GET /static/images/logo.png => generated 3091 bytes in 396 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 20921|app: 0|req: 2/7] 127.0.0.1 () {42 vars in 765 bytes} [Wed Sep  4 21:56:12 2019] GET /static/js/slide.js => generated 3079 bytes in 396 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /static/images/favicon.ico
+[pid: 20923|app: 0|req: 3/8] 127.0.0.1 () {42 vars in 815 bytes} [Wed Sep  4 21:56:13 2019] GET /static/images/favicon.ico => generated 3100 bytes in 7 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 20933)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.18 (64bit) on [Wed Sep  4 22:06:45 2019] ***
+compiled with version: 7.4.0 on 04 September 2019 13:53:57
+os: Linux-4.15.0-58-generic #64-Ubuntu SMP Tue Aug 6 11:12:41 UTC 2019
+nodename: ivy-ubuntu
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/ivy/others/fresh
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenvs/fresh/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ivy/others/fresh
+your processes number limit is 31203
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8081 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.8 (default, Jan 14 2019, 11:02:34)  [GCC 8.0.1 20180414 (experimental) [trunk revision 259383]]
+Set PythonHome to /root/.virtualenvs/fresh
+Python main interpreter initialized at 0x5596591ed760
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5596591ed760 pid: 22043 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 22043)
+spawned uWSGI worker 1 (pid: 22045, cores: 2)
+spawned uWSGI worker 2 (pid: 22046, cores: 2)
+spawned uWSGI worker 3 (pid: 22049, cores: 2)
+Python auto-reloader enabled
+spawned uWSGI worker 4 (pid: 22052, cores: 2)
+[pid: 22052|app: 0|req: 1/1] 127.0.0.1 () {54 vars in 1035 bytes} [Wed Sep  4 22:09:03 2019] GET / => generated 17436 bytes in 5040 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[pid: 22052|app: 0|req: 2/2] 127.0.0.1 () {50 vars in 942 bytes} [Wed Sep  4 22:09:24 2019] GET / => generated 17436 bytes in 4229 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 22052|app: 0|req: 3/3] 127.0.0.1 () {50 vars in 942 bytes} [Wed Sep  4 22:12:40 2019] GET / => generated 17436 bytes in 4121 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[uwsgi-python-reloader] module/file ./fresh/settings.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 4 (pid: 22052)...
+Gracefully killing worker 1 (pid: 22045)...
+Gracefully killing worker 2 (pid: 22046)...
+Gracefully killing worker 3 (pid: 22049)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/ivy/others/fresh
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:8081)
+running /root/.virtualenvs/fresh/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Wed Sep  4 22:15:44 2019] ***
+compiled with version: 7.4.0 on 04 September 2019 13:53:57
+os: Linux-4.15.0-58-generic #64-Ubuntu SMP Tue Aug 6 11:12:41 UTC 2019
+nodename: ivy-ubuntu
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/ivy/others/fresh
+detected binary path: /root/.virtualenvs/fresh/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ivy/others/fresh
+your processes number limit is 31203
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:8081 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.8 (default, Jan 14 2019, 11:02:34)  [GCC 8.0.1 20180414 (experimental) [trunk revision 259383]]
+Set PythonHome to /root/.virtualenvs/fresh
+Python main interpreter initialized at 0x561dde4d61b0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x561dde4d61b0 pid: 22043 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 22043)
+spawned uWSGI worker 1 (pid: 23852, cores: 2)
+spawned uWSGI worker 2 (pid: 23853, cores: 2)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 23858, cores: 2)
+spawned uWSGI worker 4 (pid: 23860, cores: 2)
+[uwsgi-python-reloader] module/file ./fresh/settings.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 23852)...
+Gracefully killing worker 2 (pid: 23853)...
+Gracefully killing worker 3 (pid: 23858)...
+Gracefully killing worker 4 (pid: 23860)...
+[uwsgi-python-reloader] module/file ./fresh/settings.py has been modified
+[uwsgi-python-reloader] module/file ./fresh/settings.py has been modified
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/ivy/others/fresh
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:8081)
+running /root/.virtualenvs/fresh/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Wed Sep  4 22:15:56 2019] ***
+compiled with version: 7.4.0 on 04 September 2019 13:53:57
+os: Linux-4.15.0-58-generic #64-Ubuntu SMP Tue Aug 6 11:12:41 UTC 2019
+nodename: ivy-ubuntu
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/ivy/others/fresh
+detected binary path: /root/.virtualenvs/fresh/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ivy/others/fresh
+your processes number limit is 31203
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:8081 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.8 (default, Jan 14 2019, 11:02:34)  [GCC 8.0.1 20180414 (experimental) [trunk revision 259383]]
+Set PythonHome to /root/.virtualenvs/fresh
+Python main interpreter initialized at 0x55cfa15d81b0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x55cfa15d81b0 pid: 22043 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 22043)
+spawned uWSGI worker 1 (pid: 23931, cores: 2)
+spawned uWSGI worker 2 (pid: 23932, cores: 2)
+spawned uWSGI worker 3 (pid: 23935, cores: 2)
+Python auto-reloader enabled
+spawned uWSGI worker 4 (pid: 23940, cores: 2)
+[uwsgi-python-reloader] module/file ./fresh/settings.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 2 (pid: 23932)...
+Gracefully killing worker 1 (pid: 23931)...
+Gracefully killing worker 3 (pid: 23935)...
+Gracefully killing worker 4 (pid: 23940)...
+[uwsgi-python-reloader] module/file ./fresh/settings.py has been modified
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/ivy/others/fresh
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:8081)
+running /root/.virtualenvs/fresh/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Wed Sep  4 22:16:55 2019] ***
+compiled with version: 7.4.0 on 04 September 2019 13:53:57
+os: Linux-4.15.0-58-generic #64-Ubuntu SMP Tue Aug 6 11:12:41 UTC 2019
+nodename: ivy-ubuntu
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/ivy/others/fresh
+detected binary path: /root/.virtualenvs/fresh/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ivy/others/fresh
+your processes number limit is 31203
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:8081 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.8 (default, Jan 14 2019, 11:02:34)  [GCC 8.0.1 20180414 (experimental) [trunk revision 259383]]
+Set PythonHome to /root/.virtualenvs/fresh
+Python main interpreter initialized at 0x5619e964f1b0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5619e964f1b0 pid: 22043 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 22043)
+spawned uWSGI worker 1 (pid: 24257, cores: 2)
+spawned uWSGI worker 2 (pid: 24260, cores: 2)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 24263, cores: 2)
+spawned uWSGI worker 4 (pid: 24266, cores: 2)
+[pid: 24266|app: 0|req: 2/1] 127.0.0.1 () {48 vars in 911 bytes} [Wed Sep  4 23:14:08 2019] GET / => generated 17436 bytes in 5146 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 24266|app: 0|req: 2/2] 127.0.0.1 () {48 vars in 911 bytes} [Wed Sep  4 23:14:12 2019] GET / => generated 17436 bytes in 4188 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 1)
+[uwsgi-python-reloader] module/file ./fresh/settings.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 24257)...
+Gracefully killing worker 2 (pid: 24260)...
+Gracefully killing worker 3 (pid: 24263)...
+Gracefully killing worker 4 (pid: 24266)...
+[uwsgi-python-reloader] module/file ./fresh/settings.py has been modified
+worker 1 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 2 buried after 2 seconds
+binary reloading uWSGI...
+chdir() to /home/ivy/others/fresh
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:8081)
+running /root/.virtualenvs/fresh/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Wed Sep  4 23:23:09 2019] ***
+compiled with version: 7.4.0 on 04 September 2019 13:53:57
+os: Linux-4.15.0-58-generic #64-Ubuntu SMP Tue Aug 6 11:12:41 UTC 2019
+nodename: ivy-ubuntu
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/ivy/others/fresh
+detected binary path: /root/.virtualenvs/fresh/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ivy/others/fresh
+your processes number limit is 31203
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:8081 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.8 (default, Jan 14 2019, 11:02:34)  [GCC 8.0.1 20180414 (experimental) [trunk revision 259383]]
+Set PythonHome to /root/.virtualenvs/fresh
+Python main interpreter initialized at 0x55af90fc31b0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55af90fc31b0 pid: 22043 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 22043)
+spawned uWSGI worker 1 (pid: 27428, cores: 2)
+spawned uWSGI worker 2 (pid: 27431, cores: 2)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 27432, cores: 2)
+spawned uWSGI worker 4 (pid: 27436, cores: 2)
+[uwsgi-python-reloader] module/file ./fresh/settings.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 27428)...
+Gracefully killing worker 2 (pid: 27431)...
+Gracefully killing worker 3 (pid: 27432)...
+Gracefully killing worker 4 (pid: 27436)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/ivy/others/fresh
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:8081)
+running /root/.virtualenvs/fresh/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Wed Sep  4 23:30:59 2019] ***
+compiled with version: 7.4.0 on 04 September 2019 13:53:57
+os: Linux-4.15.0-58-generic #64-Ubuntu SMP Tue Aug 6 11:12:41 UTC 2019
+nodename: ivy-ubuntu
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/ivy/others/fresh
+detected binary path: /root/.virtualenvs/fresh/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ivy/others/fresh
+your processes number limit is 31203
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:8081 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.8 (default, Jan 14 2019, 11:02:34)  [GCC 8.0.1 20180414 (experimental) [trunk revision 259383]]
+Set PythonHome to /root/.virtualenvs/fresh
+Python main interpreter initialized at 0x55ff667dd1b0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x55ff667dd1b0 pid: 22043 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 22043)
+spawned uWSGI worker 1 (pid: 31444, cores: 2)
+spawned uWSGI worker 2 (pid: 31445, cores: 2)
+spawned uWSGI worker 3 (pid: 31448, cores: 2)
+spawned uWSGI worker 4 (pid: 31449, cores: 2)
+Python auto-reloader enabled
+[pid: 31444|app: 0|req: 1/1] 127.0.0.1 () {48 vars in 1199 bytes} [Wed Sep  4 23:51:31 2019] GET /user/active/eyJhbGciOiJIUzUxMiJ9.eyJpZCI6MSwidGltZSI6MTU2NzYxMjIwNy41OTY1MDc1fQ.3P4oqOo1v5zlPL4V3auobeeMJzlzZnlP9TEnKL_GwudDYfk4abPZpW6tyXgagJCrFXOmYdSogppSFaq8_ETkNg => generated 0 bytes in 705 msecs (HTTP/1.1 302) 4 headers in 133 bytes (1 switches on core 0)
+[pid: 31449|app: 0|req: 1/2] 127.0.0.1 () {48 vars in 887 bytes} [Wed Sep  4 23:51:31 2019] GET /user/login => generated 2666 bytes in 843 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 31444|app: 0|req: 2/3] 127.0.0.1 () {58 vars in 1116 bytes} [Wed Sep  4 23:51:40 2019] POST /user/login => generated 0 bytes in 125 msecs (HTTP/1.1 302) 8 headers in 542 bytes (1 switches on core 1)
+[pid: 31444|app: 0|req: 3/4] 127.0.0.1 () {52 vars in 1008 bytes} [Wed Sep  4 23:51:41 2019] GET / => generated 3456 bytes in 51 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[uwsgi-python-reloader] module/file ./fresh/settings.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 4 (pid: 31449)...
+Gracefully killing worker 2 (pid: 31445)...
+Gracefully killing worker 1 (pid: 31444)...
+Gracefully killing worker 3 (pid: 31448)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/ivy/others/fresh
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (0.0.0.0:8081)
+running /root/.virtualenvs/fresh/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Wed Sep  4 23:52:49 2019] ***
+compiled with version: 7.4.0 on 04 September 2019 13:53:57
+os: Linux-4.15.0-58-generic #64-Ubuntu SMP Tue Aug 6 11:12:41 UTC 2019
+nodename: ivy-ubuntu
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 4
+current working directory: /home/ivy/others/fresh
+detected binary path: /root/.virtualenvs/fresh/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ivy/others/fresh
+your processes number limit is 31203
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:8081 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.8 (default, Jan 14 2019, 11:02:34)  [GCC 8.0.1 20180414 (experimental) [trunk revision 259383]]
+Set PythonHome to /root/.virtualenvs/fresh
+Python main interpreter initialized at 0x5606a87fc1b0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5606a87fc1b0 pid: 22043 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 22043)
+spawned uWSGI worker 1 (pid: 32250, cores: 2)
+spawned uWSGI worker 2 (pid: 32253, cores: 2)
+Python auto-reloader enabled
+spawned uWSGI worker 3 (pid: 32254, cores: 2)
+spawned uWSGI worker 4 (pid: 32259, cores: 2)

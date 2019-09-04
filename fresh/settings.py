@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'Mail',
         'USER': 'root',
         'PASSWORD': 'qwe123',
-        'HOST': '39.108.125.89',
+        'HOST': 'localhost',
         'PORT': 3306,
     }
 }
@@ -122,7 +122,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
@@ -139,7 +139,7 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 
 # redis地址
-REDIS_URL = "redis://:qwe123@39.108.125.89:6379/{}"
+REDIS_URL = "redis://127.0.0.1:6379/{}"
 
 # 缓存配置
 CACHES = {
@@ -157,7 +157,6 @@ CACHES = {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
     },
-
 }
 
 # 设置缓存session
@@ -178,7 +177,7 @@ DOMAIN = 'http://fresh.summerleaves.cn'
 
 LOGIN_URL = '/user/login'
 
-FDFS_CLIENT_CONF = os.path.join(BASE_DIR, 'client.conf')
+FDFS_CLIENT_CONF = os.path.join(BASE_DIR, 'config/fdfs/client.conf')
 
 IMG_URL = 'http://img.summerleaves.cn/'
 
@@ -207,6 +206,6 @@ NUMBER_OF_FAILED_ORDER_TIMES = 3
 
 ALIPAY_APP_ID = '2016101300674998'
 
-APP_PRIVATE_KEY_PATH = os.path.join(BASE_DIR, 'app_private_key.pem')
+APP_PRIVATE_KEY_PATH = os.path.join(BASE_DIR, 'config/alipay/app_private_key.pem')
 
-ALIPAY_PUBLIC_KEY_PATH = os.path.join(BASE_DIR, 'alipay_public_key.pem')
+ALIPAY_PUBLIC_KEY_PATH = os.path.join(BASE_DIR, 'config/alipay/alipay_public_key.pem')
