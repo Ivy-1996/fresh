@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'fresh.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Mail',
-        'USER': 'root',
-        'PASSWORD': 'qwe123',
-        'HOST': 'localhost',
+        'NAME': 'fresh',
+        'USER': 'debian-sys-maint',
+        'PASSWORD': 'MElX7waB5d574uM6',
+        'HOST': '127.0.0.1',
         'PORT': 3306,
     }
 }

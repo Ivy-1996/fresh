@@ -461,3 +461,149 @@ spawned uWSGI worker 2 (pid: 32253, cores: 2)
 Python auto-reloader enabled
 spawned uWSGI worker 3 (pid: 32254, cores: 2)
 spawned uWSGI worker 4 (pid: 32259, cores: 2)
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Sep 12 21:54:55 2019] ***
+compiled with version: 7.4.0 on 12 September 2019 11:45:57
+os: Linux-4.15.0-60-generic #67-Ubuntu SMP Thu Aug 22 16:55:30 UTC 2019
+nodename: ivy-TM1704
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 8
+current working directory: /home/ivy/project/fresh
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenvs/fresh/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ivy/project/fresh
+your processes number limit is 31051
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8081 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.8 (default, Aug 20 2019, 17:12:48)  [GCC 8.3.0]
+Set PythonHome to /root/.virtualenvs/fresh
+Python main interpreter initialized at 0x55c631ea2260
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55c631ea2260 pid: 5647 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 5647)
+spawned uWSGI worker 1 (pid: 5649, cores: 2)
+Python auto-reloader enabled
+spawned uWSGI worker 2 (pid: 5652, cores: 2)
+spawned uWSGI worker 3 (pid: 5653, cores: 2)
+spawned uWSGI worker 4 (pid: 5656, cores: 2)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+[pid: 5656|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 655 bytes} [Thu Sep 12 22:41:25 2019] GET / => generated 3463 bytes in 332 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 5653|app: 0|req: 1/2] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:27 2019] GET / => generated 3463 bytes in 314 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 5656|app: 0|req: 2/3] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:28 2019] GET / => generated 3463 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 5649|app: 0|req: 1/4] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:28 2019] GET / => generated 3463 bytes in 323 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 5656|app: 0|req: 3/5] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:29 2019] GET / => generated 3463 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 5653|app: 0|req: 2/6] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:29 2019] GET / => generated 3463 bytes in 38 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 5653|app: 0|req: 3/7] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:29 2019] GET / => generated 3463 bytes in 27 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 5653|app: 0|req: 4/8] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:30 2019] GET / => generated 3463 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 5656|app: 0|req: 4/9] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:30 2019] GET / => generated 3463 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 5656|app: 0|req: 5/10] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:30 2019] GET / => generated 3463 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 5656|app: 0|req: 6/11] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:30 2019] GET / => generated 3463 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 5653|app: 0|req: 5/12] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:31 2019] GET / => generated 3463 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 5653|app: 0|req: 6/13] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:31 2019] GET / => generated 3463 bytes in 27 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 5653|app: 0|req: 7/14] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:31 2019] GET / => generated 3463 bytes in 27 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 5656|app: 0|req: 7/15] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:31 2019] GET / => generated 3463 bytes in 27 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 5656|app: 0|req: 8/16] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:31 2019] GET / => generated 3463 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 5656|app: 0|req: 9/17] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:32 2019] GET / => generated 3463 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 5656|app: 0|req: 10/18] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:32 2019] GET / => generated 3463 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 5656|app: 0|req: 11/19] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:32 2019] GET / => generated 3463 bytes in 29 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 5656|app: 0|req: 12/20] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:32 2019] GET / => generated 3463 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 5653|app: 0|req: 8/21] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:32 2019] GET / => generated 3463 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 5653|app: 0|req: 9/22] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:32 2019] GET / => generated 3463 bytes in 27 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 5653|app: 0|req: 10/23] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:33 2019] GET / => generated 3463 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 5656|app: 0|req: 13/24] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:41:33 2019] GET / => generated 3463 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 1)
+[pid: 5656|app: 0|req: 14/25] 127.0.0.1 () {42 vars in 686 bytes} [Thu Sep 12 22:42:13 2019] GET / => generated 3463 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 5656|app: 0|req: 15/26] 127.0.0.1 () {42 vars in 711 bytes} [Thu Sep 12 22:42:17 2019] GET /user/login => generated 2666 bytes in 19 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 1)
+[pid: 5656|app: 0|req: 16/27] 127.0.0.1 () {48 vars in 927 bytes} [Thu Sep 12 22:42:39 2019] POST /user/login => generated 2691 bytes in 88 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 5656|app: 0|req: 17/28] 127.0.0.1 () {44 vars in 816 bytes} [Thu Sep 12 22:42:46 2019] GET /user/register => generated 3494 bytes in 22 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 1)
+[pid: 5652|app: 0|req: 1/29] 127.0.0.1 () {48 vars in 936 bytes} [Thu Sep 12 22:43:07 2019] POST /user/register => generated 0 bytes in 6961 msecs (HTTP/1.1 302) 4 headers in 133 bytes (1 switches on core 0)
+[pid: 5656|app: 0|req: 18/30] 127.0.0.1 () {44 vars in 813 bytes} [Thu Sep 12 22:43:14 2019] GET /user/login => generated 2666 bytes in 3 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 0)
+[pid: 5656|app: 0|req: 19/31] 127.0.0.1 () {42 vars in 1070 bytes} [Thu Sep 12 22:44:38 2019] GET /user/active/eyJhbGciOiJIUzUxMiJ9.eyJpZCI6MSwidGltZSI6MTU2ODI5OTM4Ny45MDkyM30.oQM6HKoab6bfidJsVq2eOSQ6eowqYqyfGrdNrvemT-6Ztpamz0QTkO-uTrVFt2oXm1q4bYHsTS8im0YZYnOOeg => generated 0 bytes in 30 msecs (HTTP/1.1 302) 4 headers in 133 bytes (1 switches on core 1)
+[pid: 5653|app: 0|req: 11/32] 127.0.0.1 () {42 vars in 764 bytes} [Thu Sep 12 22:44:38 2019] GET /user/login => generated 2666 bytes in 10 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 1)
+[pid: 5652|app: 0|req: 2/33] 127.0.0.1 () {48 vars in 927 bytes} [Thu Sep 12 22:44:50 2019] POST /user/login => generated 0 bytes in 90 msecs (HTTP/1.1 302) 8 headers in 542 bytes (1 switches on core 1)
+[pid: 5653|app: 0|req: 12/34] 127.0.0.1 () {44 vars in 850 bytes} [Thu Sep 12 22:44:51 2019] GET / => generated 3456 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[pid: 5649|app: 0|req: 2/35] 127.0.0.1 () {44 vars in 850 bytes} [Thu Sep 12 22:44:54 2019] GET /cart/ => generated 11494 bytes in 19 msecs (HTTP/1.1 200) 5 headers in 293 bytes (1 switches on core 1)
+[pid: 5653|app: 0|req: 13/36] 127.0.0.1 () {44 vars in 869 bytes} [Thu Sep 12 22:44:56 2019] GET /user/order/1 => generated 5286 bytes in 20 msecs (HTTP/1.1 200) 5 headers in 292 bytes (1 switches on core 1)
+[pid: 5656|app: 0|req: 20/37] 127.0.0.1 () {44 vars in 862 bytes} [Thu Sep 12 22:44:57 2019] GET /user/ => generated 3460 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 124 bytes (1 switches on core 0)
+[uwsgi-python-reloader] module/file ./fresh/__init__.py has been modified
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 5649)...
+Gracefully killing worker 4 (pid: 5656)...
+Gracefully killing worker 2 (pid: 5652)...
+Gracefully killing worker 3 (pid: 5653)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/ivy/project/fresh
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 3 mapped to socket 0 (0.0.0.0:8081)
+running /root/.virtualenvs/fresh/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi.ini
+*** Starting uWSGI 2.0.18 (64bit) on [Thu Sep 12 23:09:30 2019] ***
+compiled with version: 7.4.0 on 12 September 2019 11:45:57
+os: Linux-4.15.0-60-generic #67-Ubuntu SMP Thu Aug 22 16:55:30 UTC 2019
+nodename: ivy-TM1704
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 8
+current working directory: /home/ivy/project/fresh
+detected binary path: /root/.virtualenvs/fresh/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/ivy/project/fresh
+your processes number limit is 31051
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 0.0.0.0:8081 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.8 (default, Aug 20 2019, 17:12:48)  [GCC 8.3.0]
+Set PythonHome to /root/.virtualenvs/fresh
+Python main interpreter initialized at 0x55c885fd2970
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55c885fd2970 pid: 5647 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 5647)
+spawned uWSGI worker 1 (pid: 7767, cores: 2)
+spawned uWSGI worker 2 (pid: 7768, cores: 2)
+spawned uWSGI worker 3 (pid: 7771, cores: 2)
+Python auto-reloader enabled
+spawned uWSGI worker 4 (pid: 7776, cores: 2)
