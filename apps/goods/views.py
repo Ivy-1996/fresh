@@ -4,11 +4,14 @@ from django.views import View
 from goods.models import *
 from order.models import OrderGoods
 from django_redis import get_redis_connection
-
+from django.views.decorators.cache import cache_page
+from django.utils.decorators import method_decorator
 
 # Create your views here.
 
 class IndexView(View):
+
+    @method_decorator(cache_page(3600))
     def get(self, request):
         # 获取商品种类
         types = GoodsType.objects.all()
