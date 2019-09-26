@@ -4,14 +4,13 @@ from django.views import View
 from goods.models import *
 from order.models import OrderGoods
 from django_redis import get_redis_connection
-from django.views.decorators.cache import cache_page
-from django.utils.decorators import method_decorator
+
 
 # Create your views here.
 
+
 class IndexView(View):
 
-    @method_decorator(cache_page(3600))
     def get(self, request):
         # 获取商品种类
         types = GoodsType.objects.all()
@@ -21,8 +20,10 @@ class IndexView(View):
         PromotionBanner = IndexPromotionBanner.objects.all().order_by('index')
         # 获取首页分类商品展示信息
         for type in types:
-            type.img_banner = IndexTypeGoodsBanner.objects.filter(type=type, display_type=1).order_by('index')
-            type.tltle_banner = IndexTypeGoodsBanner.objects.filter(type=type, display_type=0).order_by('index')
+            type.img_banner = IndexTypeGoodsBanner.objects.filter(
+                type=type, display_type=1).order_by('index')
+            type.tltle_banner = IndexTypeGoodsBanner.objects.filter(
+                type=type, display_type=0).order_by('index')
 
         # 获取购物车商品数量
         cart_count = 0
@@ -55,7 +56,8 @@ class DetailView(View):
         # 获取商品的评论
         sku_orders = OrderGoods.objects.filter(sku=sku).exclude(comment='')
         # 获取新品信息
-        new_skus = GoodsSKU.objects.filter(type=sku.type).order_by('-create_time')[0:2]
+        new_skus = GoodsSKU.objects.filter(
+            type=sku.type).order_by('-create_time')[0:2]
 
         # 获取同一商品spu的其他规格商品
         same_spu_skus = GoodsSKU.objects.filter(goods=sku.goods).exclude(pk=pk)
@@ -136,7 +138,8 @@ class ListView(View):
             pages = range(page - 2, page + 3)
 
         # 获取新品信息
-        new_skus = GoodsSKU.objects.filter(type=type).order_by('-create_time')[0:2]
+        new_skus = GoodsSKU.objects.filter(
+            type=type).order_by('-create_time')[0:2]
 
         # 获取购物车商品数量
         cart_count = 0

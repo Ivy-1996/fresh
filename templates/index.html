@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load cache %}
 {% block title %}天天生鲜-首页{% endblock %}
 
 {% block topfiles %}
@@ -10,6 +11,7 @@
 
 
 
+{% cache 3600 body %}
 {% block body %}
 
 
@@ -81,3 +83,4 @@
     {% endfor %}
 
 {% endblock %}
+{% endcache %}
