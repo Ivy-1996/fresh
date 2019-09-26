@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'fresh.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
+        'NAME': 'Mail',
+        'USER': 'root',
+        'PASSWORD': 'qwe123',
+        'HOST': '39.108.125.89',
         'PORT': 3306,
     }
 }
@@ -139,7 +139,7 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 
 # redis地址
-REDIS_URL = "redis://"
+REDIS_URL = "redis://:qwe123@39.108.125.89/{}"
 
 # 缓存配置
 CACHES = {
