@@ -51,7 +51,7 @@ class RegisterView(View):
         data = {'id': user.id, 'time': time.time()}
         token = serializer.dumps(data).decode()
 
-        send_register_mail(email, username, token)
+        send_register_mail.delay(email, username, token)
 
         return redirect(reverse('user:login'))
 

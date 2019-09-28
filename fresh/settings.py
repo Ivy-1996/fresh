@@ -209,3 +209,5 @@ ALIPAY_APP_ID = '2016101300674998'
 APP_PRIVATE_KEY_PATH = os.path.join(BASE_DIR, 'config/alipay/app_private_key.pem')
 
 ALIPAY_PUBLIC_KEY_PATH = os.path.join(BASE_DIR, 'config/alipay/alipay_public_key.pem')
+
+AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.AllowAllUsersModelBackend']
