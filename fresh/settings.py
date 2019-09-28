@@ -80,9 +80,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'Mail',
-        'USER': 'root',
-        'PASSWORD': 'qwe123',
-        'HOST': '39.108.125.89',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
         'PORT': 3306,
     }
 }
@@ -138,21 +138,26 @@ TINYMCE_DEFAULT_CONFIG = {
     'height': 400
 }
 
+REDIS_CONFIG = {
+    'USER': '',
+    'PASSWORD': '',
+    'HOST': ''
+}
 # redis地址
-REDIS_URL = "redis://:qwe123@39.108.125.89/{}"
+REDIS_URL = "redis://{USER}:{PASSWORD}@{HOST}/".format(**REDIS_CONFIG)
 
 # 缓存配置
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": REDIS_URL.format(0),  # 0号数据库配置缓存
+        "LOCATION": REDIS_URL + '0',  # 0号数据库配置缓存
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
     },
     "session": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": REDIS_URL.format(1),  # 1号数据库配置缓存
+        "LOCATION": REDIS_URL + '1',  # 1号数据库配置缓存
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
@@ -169,17 +174,16 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_SSL = True
 EMAIL_HOST = 'smtp.qq.com'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = '919624032@qq.com'
-EMAIL_HOST_PASSWORD = 'qngkmtqtcakvbgaf'
-EMAIL_FROM = '<919624032@qq.com>'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_FROM = ''
 
 DOMAIN = 'http://fresh.summerleaves.cn'
 
 LOGIN_URL = '/user/login'
 
-FDFS_CLIENT_CONF = os.path.join(BASE_DIR, 'config/fdfs/client.conf')
-
 IMG_URL = 'http://img.summerleaves.cn/'
+FDFS_CLIENT_CONF = os.path.join(BASE_DIR, 'config/fdfs/client.conf')
 
 # 设置django文件的存库类
 DEFAULT_FILE_STORAGE = 'utils.storage.FdfsStorage'
@@ -204,7 +208,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 
 NUMBER_OF_FAILED_ORDER_TIMES = 3
 
-ALIPAY_APP_ID = '2016101300674998'
+ALIPAY_APP_ID = ''
 
 APP_PRIVATE_KEY_PATH = os.path.join(BASE_DIR, 'config/alipay/app_private_key.pem')
 

@@ -13,7 +13,7 @@ class IndexView(View):
 
     def get(self, request):
         # 获取商品种类
-        types = GoodsType.objects.all()
+        types =     GoodsType.objects.all()
         # 获取首页轮播商品信息
         GoodsBanner = IndexGoodsBanner.objects.all().order_by('index')
         # 获取首页活动信息
