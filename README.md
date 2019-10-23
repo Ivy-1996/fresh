@@ -1,5 +1,11 @@
 # python-django B2C-分布式生鲜商城
 
+### 项目实例地址：
+[https://fresh.summerleaves.cn/](https://fresh.summerleaves.cn/)
+####  后台体验
+   * [https://fresh.summerleaves.cn/xadmin/](https://fresh.summerleaves.cn/xadmin/)
+   * 账号：`fresh`
+   * 密码: `django123`
 ###  技术栈
 * 语言：Python3.6.8  (Django==2.1.5)
 * 数据库: MySql、 redis
@@ -7,6 +13,8 @@
 * 分布式文件存储: FastDFS
 * 搜索引擎(商品检索)： django-haystack 、whoosh
 * web服务器配置: Nginx+ uwsgi
+* 后台管理: django-xadmin
+
 
 ###  安装和配置
 * 安装python3.6
@@ -14,6 +22,8 @@
     * 安装PIP安装FASTDFS可能会有异常
     * 进入项目根目录提供的requirement文件夹,进入fdfs_client-py-master
         * `python setup.py install`等待安装完毕即可
+    * 安装xadmin
+        * 找到xadmin的压缩包`pip install xadmin-django2.zip`'
     * 进入项目根目录`pip install -r requeirtments.txt`
 * 配置数据库
     * setting文件配置好mysql数据库
@@ -40,3 +50,6 @@
 * 安装fast-dfs和配置
     * 参考链接：
         * https://www.cnblogs.com/ivy-blogs/p/11237118.html
+* uwsgi + nginx 项目部署
+    * 参考链接
+        * https://www.cnblogs.com/ivy-blogs/p/11162464.html

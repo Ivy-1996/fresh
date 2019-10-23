@@ -37,10 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'haystack',
     'tinymce',
-    'cart',
-    'user',
-    'order',
-    'goods',
+    'xadmin',
+    'crispy_forms',
+    'cart.apps.CartConfig',
+    'user.apps.UserConfig',
+    'order.apps.OrderConfig',
+    'goods.apps.GoodsConfig',
 ]
 
 MIDDLEWARE = [
