@@ -3,7 +3,7 @@
 ### 项目实例地址：
 [https://fresh.summerleaves.cn/](https://fresh.summerleaves.cn/)
 ####  后台体验
-   * [https://fresh.summerleaves.cn/xadmin/](https://fresh.summerleaves.cn/xadmin/)
+   * [https://fresh.summerleaves.cn/admin/](https://fresh.summerleaves.cn/admin/)
    * 账号：`fresh`
    * 密码: `django123`
 ###  技术栈
